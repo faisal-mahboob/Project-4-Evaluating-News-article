@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+        </header>
+
+        <main>
+            <video id="vide" autoplay loop muted>
+                <source src="../video/production_ID_5091624.mp4">
+            </video>
+            <h1 class="title">Sentiment Analysis</h1>
+            <section id="userinputs">
+                <form class="input" onsubmit="return Client.handleSubmit(event)">
+                    <input id="user" type="url" name="input" value="" placeholder="Enter URL">
+                    <input type="submit" name="" id="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+
+            <section id="form-container">
+               <div id='form'> 
+                    <div class="titlebox">
+                        <strong class="fr">Submission Results:</strong>
+                    </div>
+                    <div id="results">
+                    <label id="t4" for="mod"> Model: </label>
+                    <textarea id="mod" type="text"></textarea>
+                    
+                    <label id="t5" for="sc">Scource_Tag:</label>
+                    <textarea id="sc"></textarea>
+                 
+                    <label id="t6" for="agre">Agreement/Dis-agreement:</label>
+                    <textarea id ='agre'></textarea>
+                    
+                    <label id="t7" for="subj">Subjectivity:</label>
+                    <textarea id="subj"></textarea>
+                  
+                    <label id="t8" for="conf">Confidence:</label>
+                    <textarea id="text"></textarea>
+                 
+                    <label id="t9" for="iron">Irony:</label>
+                    <textarea id="iron"></textarea>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p></p>
+        </footer>
+
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
