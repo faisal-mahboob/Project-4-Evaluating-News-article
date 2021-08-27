@@ -54,6 +54,8 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        new WorkboxPlugin.GenerateSW()
+        new WorkboxPlugin.GenerateSW( { 
+            maximumFileSizeToCacheInBytes:  1024  *  1024  *  5, 
+        })
     ]
 }
